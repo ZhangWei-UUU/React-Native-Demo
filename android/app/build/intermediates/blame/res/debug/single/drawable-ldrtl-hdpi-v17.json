@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/zhangwei/Desktop/someone/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17/abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "/Users/zhangwei/.android/build-cache/1d2c326958cd41d6ac85fe463c44f6e173ddbb27/output/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Users/zhangwei/Desktop/someone/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17/abc_spinner_mtrl_am_alpha.9.png",
+        "source": "/Users/zhangwei/.android/build-cache/1d2c326958cd41d6ac85fe463c44f6e173ddbb27/output/res/drawable-ldrtl-hdpi-v17/abc_spinner_mtrl_am_alpha.9.png"
+    },
+    {
+        "merged": "/Users/zhangwei/Desktop/someone/android/app/build/intermediates/res/merged/debug/drawable-ldrtl-hdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "/Users/zhangwei/.android/build-cache/1d2c326958cd41d6ac85fe463c44f6e173ddbb27/output/res/drawable-ldrtl-hdpi-v17/abc_ic_menu_copy_mtrl_am_alpha.png"
+    }
+]
