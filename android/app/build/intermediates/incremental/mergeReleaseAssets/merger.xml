@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/zhangwei/Desktop/someone/android/app/src/main/assets"><file name="index.android.bundle" path="/Users/zhangwei/Desktop/someone/android/app/src/main/assets/index.android.bundle"/></source><source path="/Users/zhangwei/Desktop/someone/android/app/build/generated/assets/shaders/release"/></dataSet><dataSet config="release"><source path="/Users/zhangwei/Desktop/someone/android/app/src/release/assets"/></dataSet></merger>
