@@ -46,6 +46,8 @@ Android requires that all applications be digitally signed with a certification 
 keytool -genkey -v -keystore YOUR_APP_NAME.keystore -alias YOUR_APP_ALIAS -keyalg RSA -keysize 2048 -validity DAYS_VALUES
 ```
 
+[More Details](https://facebook.github.io/react-native/docs/0.56/signed-apk-android)
+
 ## Build a apk and send to Android Device for test
 
 Enter into `/android` folder, the run the following commands for building a app-release.apk:
