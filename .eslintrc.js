@@ -1,11 +1,8 @@
 module.exports = {
     "env": {
-        "browser": true,
-        "commonjs": true,
-        "es6": true,
         "react-native/react-native": true
     },
-    "extends": "eslint:recommended",
+    "extends": "plugin:react-native/all",
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -18,10 +15,6 @@ module.exports = {
         "react-native"
     ],
     "rules": {
-        "react-native/no-unused-styles": 2,
-    "react-native/split-platform-components": 2,
-    "react-native/no-inline-styles": 2,
-    "react-native/no-color-literals": 2,
         "indent": [
             "error",
             2
@@ -37,6 +30,10 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "react-native/no-unused-styles": 2,
+        "react-native/split-platform-components": 2,
+        "react-native/no-inline-styles": 2,
+        "react-native/no-color-literals": 2,
     }
 };
