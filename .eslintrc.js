@@ -1,8 +1,12 @@
 module.exports = {
     "env": {
-        "react-native/react-native": true
+        "browser": true,
+        "commonjs": true,
+        "es6": true
     },
-    "extends": "plugin:react-native/all",
+    "extends": [
+    "eslint:recommended",                                                                                                             
+    "plugin:react/recommended"  ],
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -11,13 +15,12 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react", 
-        "react-native"
+        "react"
     ],
     "rules": {
         "indent": [
             "error",
-            2
+            "tab"
         ],
         "linebreak-style": [
             "error",
@@ -30,10 +33,6 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ],
-        "react-native/no-unused-styles": 2,
-        "react-native/split-platform-components": 2,
-        "react-native/no-inline-styles": 2,
-        "react-native/no-color-literals": 2,
+        ]
     }
 };
