@@ -1,20 +1,41 @@
 import React, { Component } from "react";
 import { View, Text,DrawerLayoutAndroid } from "react-native";
 import { NativeRouter, Link,Route } from "react-router-native";
+import { List, ListItem,Avatar } from "react-native-elements";
 import Home from "./Home";
 import Settings from "./Settings";
 import NavMenu from "../Constant/NavMenu";
+import NavStyle from "../Styles/navigatorStyle";
+
 class Frame extends Component {
 	render() {
 		var navigator =( <View style={{flex: 1, backgroundColor: "#fff"}}>
 			<View>
-				{NavMenu.map((menu,key)=>{
-					return(
-						<Link to={menu.url} key={key}>
-							<Text>{menu.name}</Text>
-						</Link>
-					);
-				})}
+				<View style={NavStyle.header}>
+					<Avatar
+						medium
+						rounded
+						source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"}}
+						onPress={() => console.log("Works!")}
+						activeOpacity={0.7}
+					/>	
+					<Text style={NavStyle.p}>{"尚未登录"}</Text>
+				</View>
+				<List containerStyle={{marginBottom: 20}}>
+					{
+						NavMenu.map((menu,key) => (
+							<Link to={menu.url} key={key}>
+								<ListItem
+									roundAvatar
+									// avatar={{uri:l.avatar_url}}
+									key={menu.name}
+									title={menu.name}
+								/>
+							</Link>
+						))
+					}
+				
+				</List>
 			</View>
 		</View>);
 		return(
@@ -24,7 +45,6 @@ class Frame extends Component {
 					drawerPosition={DrawerLayoutAndroid.positions.Left}
 					renderNavigationView={()=>navigator }>
 					<View>
-						<Text>首页LOGO</Text>
 						<View>					
 							<Route exact path="/" component={Home}/>
 							<Route path="/settings" component={Settings}/>
