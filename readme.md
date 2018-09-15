@@ -91,3 +91,12 @@ Enter into `/android` folder, the run the following commands for building a app-
 
 ## Put APK into Xiaomi Store
 
+## React Native Elements使用
+
+## 包依赖清洗
+
+1. watchman watch-del-all
+2. rm -rf node_modules
+3. yarn
+4. rm -rf /tmp/metro-bundler-cache-*
+5. rm -rf /tmp/haste-map-react-native-packager-*
