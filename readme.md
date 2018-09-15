@@ -56,5 +56,38 @@ Enter into `/android` folder, the run the following commands for building a app-
 ./gradlew assembleRelease
 ```
 
+## Only Android Components
+
+### ViewPagerAndroid
+
+### DrawerLayoutAndroid
+这是一种Android系统独有的抽屉导航方式，在`renderNavigationView`属性中，我们可以导入导航组件，` drawerWidth`属性可以设置抽屉的宽度，`drawerPosition`属性设置抽屉的拉出位置，通常我们设置在左侧。
+
+
+### ToolbarAndroid
+
+## Only iOS Components
+
+### DatePickerIOS
+
+### MaskedViewIOS
+
+### NavigatorIOS
+
+### PickerIOS
+
+### ProgressIOS
+
+### SegmentedControlIOS
+
+### SnapshotViewIOS
+
+### TabBarIOS
+
+### 
+## Shared Components
+
+###
+
 ## Put APK into Xiaomi Store
 

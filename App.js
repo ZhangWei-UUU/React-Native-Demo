@@ -7,8 +7,9 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,Image,Button} from 'react-native';
+import {Platform, StyleSheet, ViewPagerAndroid, View, Text,DrawerLayoutAndroid } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
+import { NativeRouter,Route, Link } from 'react-router-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -17,14 +18,9 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-
-export default class App extends Component<Props> {
+export default class App extends Component{
     componentDidMount(){
         SplashScreen.hide();
-        // setTimeout(()=>{
-        //     SplashScreen.hide();
-        // },2000)   
     }
 
     click = () =>{
@@ -32,18 +28,44 @@ export default class App extends Component<Props> {
     }
     
   render() {
-    return (
-      <View style={styles.container}>
-      <View style={{position:"absolute",zIndex:100,bottom:"30%"}}>
-        <Button
-         onPress={this.click}
-         title="进入逗音"
-         color="green"
-         accessibilityLabel="Learn more about this purple button"
-      />
-       </View>
-        <Image source={require('./img/welcome.png')}style={{width: "100%", height:"100%"}} />
+    var navigationView = (
+        <View style={{flex: 1, backgroundColor: '#fff'}}>
+        
+            <View>
+                <Link to="/">
+          <Text>主页</Text>
+          </Link>
+          <Link to="/settings">
+          <Text>设置</Text>
+          </Link>
+          </View>
+         
+        </View>
+      );
+    var Home = ()=> (
+        <View style={{flex: 1}}>
+        <Text>家dsaaaaaaaaaaaaads</Text>
+        </View>
+    )
+
+    var Settings = ()=>(
+        <View style={{flex: 1, alignItems: 'center'}}>
+        <Text style={{margin: 10, fontSize: 15, textAlign: 'right'}}>World!</Text>
       </View>
+    )
+    return (
+        <NativeRouter>
+        <DrawerLayoutAndroid
+        drawerWidth={200}
+        drawerPosition={DrawerLayoutAndroid.positions.Left}
+        renderNavigationView={() => navigationView}>
+       <View>
+           <Text>首页LOGO</Text>
+        <Route exact path="/" component={Home}/>
+        <Route path="/settings" component={Settings}/>
+        </View>
+      </DrawerLayoutAndroid>
+      </NativeRouter>
     );
   }
 }
