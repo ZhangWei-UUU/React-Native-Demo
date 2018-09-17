@@ -6,7 +6,8 @@ import Home from "./Home";
 import Settings from "./Settings";
 import NavMenu from "../Constant/NavMenu";
 import NavStyle from "../Styles/navigatorStyle";
-
+import Login from "./Login";
+const bcuri = require("../img/login-background.jpg");
 class Frame extends Component {
 	render() {
 		var navigator =( <View style={{flex: 1, backgroundColor: "#fff"}}>
@@ -15,7 +16,7 @@ class Frame extends Component {
 					<Avatar
 						medium
 						rounded
-						source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"}}
+						source={bcuri}
 						onPress={() => console.log("Works!")}
 						activeOpacity={0.7}
 					/>	
@@ -27,7 +28,7 @@ class Frame extends Component {
 							<Link to={menu.url} key={key}>
 								<ListItem
 									roundAvatar
-									// avatar={{uri:l.avatar_url}}
+									leftIcon={{name:menu.icon}}
 									key={menu.name}
 									title={menu.name}
 								/>
@@ -48,6 +49,7 @@ class Frame extends Component {
 						<View>					
 							<Route exact path="/" component={Home}/>
 							<Route path="/settings" component={Settings}/>
+							<Route path="/login" component={Login}/>
 						</View>
 					</View>
 				</DrawerLayoutAndroid>

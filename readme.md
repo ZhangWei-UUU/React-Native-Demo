@@ -95,8 +95,27 @@ Enter into `/android` folder, the run the following commands for building a app-
 
 ## 包依赖清洗
 
+不同于web开发，在手机端开发时由于资源会实时打包成原生文件所以在删除某个依赖包的时候，不仅要从node_modules中进行删除，
+还要对原生代码的import 和相关临时文件的缓存进行删除。步骤如下：
+
 1. watchman watch-del-all
 2. rm -rf node_modules
 3. yarn
 4. rm -rf /tmp/metro-bundler-cache-*
 5. rm -rf /tmp/haste-map-react-native-packager-*
+
+## 有关Icon的引入
+
+在本案例中，我们使用的是[react-native-vector-icons](https://github.com/oblador/react-native-vector-icons);
+以安卓为例，
+
+打开`android/app/build.gradle`文件，将font打包文件引入打包文件中:
+
+```gradle
+project.ext.vectoricons = [
+    iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf' ] // Name of the font files you want to copy
+]
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+```
+
+具体其他高级配置请查看其官方文档。
