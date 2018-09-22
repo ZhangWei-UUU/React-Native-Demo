@@ -17,7 +17,7 @@ class Frame extends Component {
 						medium
 						rounded
 						source={bcuri}
-						onPress={() => console.log("Works!")}
+				
 						activeOpacity={0.7}
 					/>	
 					<Text style={NavStyle.p}>{"尚未登录"}</Text>
