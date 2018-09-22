@@ -8,48 +8,48 @@ const bcuri = require("../img/login-background.jpg");
 
 class Login extends Component{
     static navigationOptions = {
-        title: '登录',
+        title: "登录",
     };
 
     submit = () =>{
-        console.log("xx")
+        console.log("xx");
     };
 
-	render(){
-		return(
-		<ImageBackground source={bcuri}
-				style={styles.bgImage}>
-				<View style={styles.loginView}>
-					<Text h3 style={{ color: "#fff",textAlign:"center"}}>登录</Text>
+    render(){
+        return(
+            <ImageBackground source={bcuri}
+                style={styles.bgImage}>
+                <View style={styles.loginView}>
+                    <Text h3 style={{ color: "#fff",textAlign:"center"}}>登录</Text>
                     <TextInput
-                       style={{height: 40, borderColor: '#fff', borderWidth: 1}}
+                        style={{height: 40, borderColor: "#fff", borderWidth: 1}}
                     />
-					<Button
-						large
+                    <Button
+                        large
                         onPress={this.submit}
                       
-						buttonStyle={styles.submit}
-						title='登录'
-						button
-					/>    
-				</View>	
-			</ImageBackground>
-		);
-	}
+                        buttonStyle={styles.submit}
+                        title='登录'
+                        button
+                    />    
+                </View>	
+            </ImageBackground>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-	loginView: {	
-		paddingTop:300
-	},
-	bgImage: {
-		flex: 1,
-		top: 0,
-		left: 0,
-		width: SCREEN_WIDTH,
-		height: SCREEN_HEIGHT,
-		justifyContent: "center",
-		alignItems: "center"
+    loginView: {	
+        paddingTop:300
+    },
+    bgImage: {
+        flex: 1,
+        top: 0,
+        left: 0,
+        width: SCREEN_WIDTH,
+        height: SCREEN_HEIGHT,
+        justifyContent: "center",
+        alignItems: "center"
     },
     submit:{
         backgroundColor:"red",
