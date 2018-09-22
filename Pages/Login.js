@@ -10,20 +10,19 @@ class Login extends Component{
     static navigationOptions = {
         title: '登录',
     };
+
     submit = () =>{
         console.log("xx")
     };
 
 	render(){
 		return(
-			<ImageBackground source={bcuri}
+		<ImageBackground source={bcuri}
 				style={styles.bgImage}>
 				<View style={styles.loginView}>
 					<Text h3 style={{ color: "#fff",textAlign:"center"}}>登录</Text>
                     <TextInput
                        style={{height: 40, borderColor: '#fff', borderWidth: 1}}
-                    //    onChangeText={(text) => this.setState({text})}
-                    //    value={this.state.text}
                     />
 					<Button
 						large

@@ -17,11 +17,11 @@ class Home extends Component {
     render(){
         let { navigation } = this.props;
         return(
-        <View>
+           <View>
          <Text>主页</Text>
 			<Button
 				title="Go to Details"
-				onPress={() => navigation.navigate("Login")}
+			    onPress={() => navigation.navigate("Login")}
 			/>
     </View>	);
     }
