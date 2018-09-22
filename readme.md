@@ -119,3 +119,92 @@ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 
 具体其他高级配置请查看其官方文档。
+
+## Chrome Debug的监控
+
+尽管我们已经拥有开启虚拟机的方法，但是虚拟机作为开发监控视图，仅仅只能代替浏览器视图部分。对于开发时debug和对于前后台交互方面，虚拟机并不能做任何事情，这方面的工作仍旧需要依赖于Chrome 开发者工具。
+
+```
+http://localhost:8081/debugger-ui/
+```
+
+在Chrome中打开上面的地址后，通过F12就可以如同web开发一样进行app debug调试。
+## React Navigation 使用
+
+在浏览器中，当用户点击一个a link的时候，URL就会被Push到浏览器的history stack中。 当用户再次点击浏览器Back按钮时，history stack的顶部就会pop出这个url,表面是打开了一个新页面，实际这个页面是你之前已经访问过的页面。 而在原生的React Native中则不存在浏览器环境中的这种全局history stack概念，这就是React Navigation 存在的价值。
+
+React Navigation 它的机制在于实现一个APP中不同屏幕之间和管理不同导航历史之间进行无缝衔接。 
+
+对于React Navigation， 它的核心函数叫做`createStackNavigator`。 该函数会返回一个React 组件，在形式上它是一个配置对象形式。由于App的导航往往是一个app的核心，所以通常我们会把`createStackNavigator`函数在根文件-App.js中进行引入。
+
+在对象配置方面，如下：
+```js
+{
+    Home:{
+        screen:HomeScreen
+    },
+    List:{
+        screen:ListScreen
+    },
+}
+```
+
+在默认情况下， 在APP的顶部位置会出现一个头部导航条。
+
+本教程只是简单演示，screen属性之外的option选项设置请参加[教程](https://reactnavigation.org/docs/en/stack-navigator.html)
+
+在页面的跳转方面，在加入`react-navigation`的项目中，每一个组件的props属性中都会包含一个`navigation`属性。
+通过该属性下的三个方法可以完成页面跳转：
+
+```js
+1. navigation.push("xxx");
+2. navigation.navigate("xxx");
+3. navigation.goBack();
+```
+
+### 前端不同页面之间的传参
+
+在web开发中，前端页面在跳转时参数的传递是非常常见的一种操作，一般常见额方式有两种，一种是写在request中，另一种则是写在url中。
+而在`React Navigation`中，我们则使用，`navigation`对象其在调用`push`和`navigate`方法时， 其第二个参数就是用于参数传递的对象。
+
+```js
+navigation.navigate("xxx",{id:123,name:"zhangwei"});
+```
+
+而对于接收参数的页面只需使用：
+```js
+ navigation.getParam('id', 'name');
+```
+即可。
+
+### 头部导航的样式设置
+
+对于不同的页面级组件，在其组件中添加`static navigationOptions`即可。对于 navigationOptions而言，它既可以是一个对象形式也可以是一个函数形式（return 的结果还是对象）；
+
+```js
+ static navigationOptions = {
+    title: 'Home',
+  };
+```
+
+在上面这段代码中，我们就可以给头部设置一个名称`Home`,在默认情况iOS在中间居中，而在android中侧靠左。
+
+结合上面所述，`navigationOptions`还可以是一个函数形式，那么什么时候使用函数形式，那么就是在动态页面时，我们需要参数渲染页面title的时候，这个时候就需要：
+
+```js
+ static navigationOptions = ({ navigation }) => {
+    return {
+      title: navigation.getParam('otherParam', 'A Nested Details Screen'),
+    };
+  };
+```
+
+既然title是由`getParam`进行获取，那么title也可以通过`setParams`进行修改：
+
+```js
+<Button
+    title="Update the title"
+    onPress={() => this.props.navigation.setParams({otherParam: 'Updated!'})}
+  />
+```
+[更多有关Header Title的详情](https://reactnavigation.org/docs/en/stack-navigator.html#navigationoptions-used-by-stacknavigator)

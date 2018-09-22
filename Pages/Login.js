@@ -7,6 +7,9 @@ const SCREEN_HEIGHT = Dimensions.get("window").height;
 const bcuri = require("../img/login-background.jpg");
 
 class Login extends Component{
+    static navigationOptions = {
+        title: '登录',
+    };
     submit = () =>{
         console.log("xx")
     };
