@@ -120,6 +120,8 @@ apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
 具体其他高级配置请查看其官方文档。
 
+> 注意：在配置文件配置好后运行`react-native link react-native-vector-icons`;
+
 ## Chrome Debug的监控
 
 尽管我们已经拥有开启虚拟机的方法，但是虚拟机作为开发监控视图，仅仅只能代替浏览器视图部分。对于开发时debug和对于前后台交互方面，虚拟机并不能做任何事情，这方面的工作仍旧需要依赖于Chrome 开发者工具。
