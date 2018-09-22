@@ -13,26 +13,26 @@ import Home from "./Pages/Home";
 import Login from "./Pages/Login";
 
 const RootStack = createStackNavigator({
-	Home: {	
-		screen: Home,
-		title:"home",
-	},
-	Login :{
-		title:"login",
-		screen: Login
-	}
+    Home: {	
+        screen: Home,
+        title:"home",
+    },
+    Login :{
+        title:"login",
+        screen: Login
+    }
 }
 );
 
 class App extends Component{
-	componentDidMount(){
-		SplashScreen.hide();
-	}
-	render() {
-		return (
-			<RootStack/>
-		);
-	}
+    componentDidMount(){
+        SplashScreen.hide();
+    }
+    render() {
+        return (
+            <RootStack/>
+        );
+    }
 }
 
 export default App;

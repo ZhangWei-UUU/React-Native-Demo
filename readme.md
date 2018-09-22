@@ -207,4 +207,8 @@ navigation.navigate("xxx",{id:123,name:"zhangwei"});
     onPress={() => this.props.navigation.setParams({otherParam: 'Updated!'})}
   />
 ```
-[更多有关Header Title的详情](https://reactnavigation.org/docs/en/stack-navigator.html#navigationoptions-used-by-stacknavigator)
+[更多有关Header Title的详情](https://reactnavigation.org/docs/en/stack-navigator.html#navigationoptions-used-by-stacknavigator);
+
+### 底部导航栏的实现
+
+对于一个手机app来说，最为常见的就是其底部的tab导航。本教程主要是讲解`createBottomTabNavigator`的使用，当然也会提及到[createMaterialBottomTabNavigator](https://reactnavigation.org/docs/en/material-bottom-tab-navigator.html)第三方模块的使用。
