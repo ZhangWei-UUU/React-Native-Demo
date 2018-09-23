@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { View,Text } from "react-native";
+import { ScrollView,Dimensions } from "react-native";
+import Carousel from '../HomeModules/Carousel';
 import FirstList from '../HomeModules/FirstList';
+import SecondList from '../HomeModules/SecondList';
 
 class Comment extends Component {
     static navigationOptions = {
@@ -11,10 +13,13 @@ class Comment extends Component {
         headerTintColor: "#484848",
     };
     render(){
+        const screenHeight = Dimensions.get('window').height
         return(
-           <View>
+           <ScrollView style={{flex:1}}>
+               <Carousel/>
                <FirstList/>
-           </View>
+               <SecondList/>
+           </ScrollView>
         );
     }
 }

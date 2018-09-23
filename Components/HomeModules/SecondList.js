@@ -14,6 +14,9 @@ const LIST = [
 export default () =>{
     return(
         <View style={styles.main}>
+            <View style={styles.title}>
+              <Text style={styles.titleP}>待办事项</Text>
+            </View>
         {LIST.map(item=>{
             return(
                 <View key={item.key} style={styles.item}>
@@ -29,20 +32,29 @@ export default () =>{
 const styles = StyleSheet.create({
     main:{
         marginTop:10,
-        minHeight:100,
+        minHeight:300,
+        paddingTop:10,
+        paddingLeft:10,
         backgroundColor:"#fff",
         flex:1,
-        flexDirection:"row",
+        flexDirection:"column",
         justifyContent:"center",
         flexWrap: 'wrap',
         alignItems: 'center'
     },
+    title:{
+        flexDirection:"column",
+        height:20,
+        width:"100%"
+    },
+    titleP:{
+        fontSize:20
+    },
     item:{
-        width:'25%',
         height:90,
         justifyContent:"center",
         alignItems: 'center',
-        paddingTop:20
+        paddingTop:20,
     },
     p:{
         marginTop:10
