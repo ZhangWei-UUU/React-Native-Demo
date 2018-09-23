@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import { createStackNavigator } from "react-navigation";
-import Comments from '../Components/SubPages/Comment';
+import MainMap from '../Components/SubPages/MainMap';
 import Search from '../Components/SubPages/Search';
 
 const RootStack =  createStackNavigator({
-    Comment: { screen: Comments},
+    MainMap: { screen: MainMap},
     Search: { screen: Search},
 })
-
-class Home extends Component {
+class Map extends Component {
     render(){
-        return( <RootStack/>);
+        return(
+           <RootStack/>
+        );
     }
 }
 
-export default Home;
+export default Map;
