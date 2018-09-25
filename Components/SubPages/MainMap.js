@@ -11,9 +11,9 @@ class MainMap extends Component {
     };
     render(){
         return(
-           <View>
-               <Text>主地图</Text>
-           </View>
+            <View>
+                <Text>主地图</Text>
+            </View>
         );
     }
 }
